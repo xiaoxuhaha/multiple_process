@@ -1,7 +1,7 @@
 #!/usr/bin/env php
 <?php
 /** * PHP多进程工具
- *
+ *  ./multi_process.sh "php test.php" 50
  */
 date_default_timezone_set('PRC');
 if (substr(php_sapi_name(), 0, 3) !== 'cli') {
