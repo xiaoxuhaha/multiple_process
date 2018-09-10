@@ -1,6 +1,6 @@
 #!/usr/bin/env php
 <?php
-/** * PHP¶à½ø³Ì¹¤¾ß
+/** * PHPå¤šè¿›ç¨‹å·¥å…·
  *
  */
 date_default_timezone_set('PRC');
@@ -18,26 +18,26 @@ example:
 EOD;
     exit($man);
 }
-// ÃüÁî
+// å‘½ä»¤
 $cmd = $argv[1];
-// ×î´ó½ø³ÌÊý
+// æœ€å¤§è¿›ç¨‹æ•°
 $max = isset($argv[2]) ? $argv[2] : 10;
 for ($i = 0; $i < $max; $i++) {
     process_execute($cmd);
-    readline_add_history($cmd); // Ìí¼Óµ½ÀúÊ·¼ÇÂ¼
+    readline_add_history($cmd); // æ·»åŠ åˆ°åŽ†å²è®°å½•
 }
 exit(0);
 function process_execute($input) 
 {
-    $pid = pcntl_fork(); //´´½¨×Ó½ø³Ì
-    if ($pid == 0) {//×Ó½ø³Ì
+    $pid = pcntl_fork(); //åˆ›å»ºå­è¿›ç¨‹
+    if ($pid == 0) {//å­è¿›ç¨‹
         $pid = posix_getpid();
         echo "\n*\x1b[5;34;m Process {$pid} was created, and Executed:\x1b[0m\n";
-        echo exec($input); //Ö´ÐÐÃüÁî
+        echo exec($input); //æ‰§è¡Œå‘½ä»¤
         echo "\n*\x1b[5;32;m Process {$pid} has finished running.\x1b[0m\n";
         exit;
-    } else {//Ö÷½ø³Ì
-        $pid = pcntl_wait($status, WUNTRACED); //È¡µÃ×Ó½ø³Ì½áÊø×´Ì¬
+    } else {//ä¸»è¿›ç¨‹
+        $pid = pcntl_wait($status, WUNTRACED); //å–å¾—å­è¿›ç¨‹ç»“æŸçŠ¶æ€
         if (pcntl_wifexited($status)) {
                 echo "\n\n* Sub process: {$pid} exited with {$status}";
         }
