@@ -11,4 +11,5 @@
         cli_set_process_title("我是{$ppid}的子进程,我的进程id是{$cpid}.");
         sleep(30);
     }	
+	###add by feature_009
 ?>
