@@ -1,5 +1,6 @@
 <?php
     $ppid = posix_getpid();
+	//add by feature_002 ----会提交的！！！
     $pid = pcntl_fork();
     if ($pid == -1) {
         throw new Exception('fork子进程失败!');
