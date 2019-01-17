@@ -131,6 +131,7 @@ class CryptAES
 }
  //error_reporting(1);
  //test feature_001 add
+ //feature_002 add this log
 //密钥
 $keyStr = 'zdst';
 //加密的字符串
