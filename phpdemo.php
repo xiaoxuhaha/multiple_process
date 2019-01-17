@@ -1,5 +1,5 @@
 <?php
-    $ppid = posix_getpid();	
+    $ppid = posix_getpid();
     $pid = pcntl_fork();
     if ($pid == -1) {
         throw new Exception('fork子进程失败!');
