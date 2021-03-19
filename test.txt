@@ -1,0 +1,4 @@
+git rebase --abort
+git rebase --abort
+git rebase --abort
+git rebase --abort
